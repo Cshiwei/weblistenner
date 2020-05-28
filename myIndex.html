@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weblistenner</title>
+</head>
+<body>
+<div>
+    <button onclick="openConnection()">开启连接</button>
+    <button onclick="closeConnection()">关闭连接</button>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <button onclick="sendMsg()">发送消息</button>
+    <input title="发送窗口" id ="msg" type="text" name="message"/>
+</div>
+<dl></dl>
+<ul id="dial"></ul>
+<script>
+
+    //客户端消息
+    function clientSay(msg) {
+        document.getElementById('dial').innerHTML += "<li>client:"+msg+"</li>";
+    }
+    //服务端消息
+    function serverSay(msg){
+        document.getElementById('dial').innerHTML += "<li>server:"+msg+"</li>";
+    }
+    let ws;
+    function openConnection() {
+        ws = new WebSocket("ws://127.0.0.1:9998");
+        ws.onopen = function () {
+             clientSay("连接成功！")
+        };
+        ws.onclose = function () {
+            clientSay("连接关闭!");
+        };
+        ws.onmessage = function (evt) {
+            serverSay(evt.data);
+        };
+        ws.onerror = function () {
+            clientSay("连接出错");
+        }
+    }
+    //关闭连接
+    function closeConnection(){
+        ws.close();
+    }
+    //发送消息
+    function sendMsg() {
+        let msg = document.getElementById("msg").value;
+        clientSay(msg);
+        ws.send(msg);
+    }
+
+</script>
+</body>
+</html>
