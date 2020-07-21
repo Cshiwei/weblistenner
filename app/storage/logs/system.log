@@ -1,0 +1,20 @@
+[2020-05-28 10:52:08] lumen.DEBUG: sendBuffer33  
+[2020-05-28 10:52:08] lumen.DEBUG: sendBufferHTTP/1.1 101 Switching Protocols
+Upgrade:websocket
+Connection:Upgrade
+Sec-WebSocket-Accept:L8i/Mwn5QqbU8iNO2o8SLFsxEw8=
+
+  
+[2020-05-28 10:52:08] lumen.DEBUG: len126  
+[2020-05-28 10:53:10] lumen.DEBUG: sendBuffer2  
+[2020-05-28 10:53:10] lumen.DEBUG: len1  
+[2020-05-29 07:43:49] lumen.DEBUG: sendBuffer33  
+[2020-05-29 07:43:49] lumen.DEBUG: sendBufferHTTP/1.1 101 Switching Protocols
+Upgrade:websocket
+Connection:Upgrade
+Sec-WebSocket-Accept:rJjhA2SLgsXfZJmoMfx6K6e5S6g=
+
+  
+[2020-05-29 07:43:49] lumen.DEBUG: len126  
+[2020-05-29 07:43:55] lumen.DEBUG: sendBuffer2  
+[2020-05-29 07:43:55] lumen.DEBUG: len1  

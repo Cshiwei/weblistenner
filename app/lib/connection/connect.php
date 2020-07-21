@@ -113,6 +113,7 @@ class connect {
      */
     public function send($sendBuffer,$isEncode=false)
     {
+        log_daily('system')->debug('sendBuffer'.$sendBuffer);
         if (true === $isEncode && $this->protocol)
         {
             $parser      = $this->protocol;
@@ -132,6 +133,7 @@ class connect {
         else
         {
             $len = @fwrite($this->socket, $sendBuffer);
+            log_daily('system')->debug('len'.$len);
             //表示发送成功
             if ($len === strlen($sendBuffer))
             {
